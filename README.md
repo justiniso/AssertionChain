@@ -1,4 +1,4 @@
-assertionchain
+AssertionChain
 =============
 
 An AssertionChain is a wrapper for a group of commands that must happen in sequence.
@@ -22,13 +22,24 @@ This is roughly equivalent to:
 
 The above example is certainly more readable, so why use an AssertionChain at all? For starters, the chain
 encourages the user to provide line-by-line detail about each step being executed. So if you want to understand
-why the above assertion failed, you would have to explain where that value came from in the assertion, which can be
-tedious. AssertionChain provides an API for performing incremental checks on the operations being executed in the
-chain.
+why the above assertion failed, you would have to construct a detailed error message indicating the actual and
+expected value along with the step that produced the actual value. That's not particularly hard:
+
+    expected = 3
+    val = 1 + 1
+    message = 'Adding 1 + 1 did not result in expected value {expected}, value was: {actual}'.format(
+        expected=expected,
+        actual=val
+    )
+    assert val == expected, message
+
+But having two repeat this every time you run a command can become very, very tedious. AssertionChain provides this
+API for performing incremental checks on each operations being executed in the chain, reducing the overhead of having
+to type all of this out.
 
 It is a simple utility for grouping related actions and ensuring each step succeeds. For instance, assume we have a
 suite of functions that interact with files (get_contents, write_contents, delete_file). Their contract stipulates
-that each function will return True of False depending on whether or not they were successful. We can use an
+that each function will return True, False, or a value depending on whether or not they were successful. We can use an
 AssertionChain to make sure each step was successful:
 
     filename = '/tmp/sd9x0c2'
