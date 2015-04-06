@@ -5,7 +5,6 @@ from setuptools import setup
 setup(
     name='assertionchain',
     description='Utility for chaining commands and incrementally checking the results',
-    packages=['assertionchain'],
     version='0.1.0',
     author='Justin Iso',
     url='https://github.com/justiniso/assertionchain',
