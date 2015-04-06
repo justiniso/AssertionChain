@@ -1,9 +1,13 @@
 AssertionChain
 =============
 
-[![Build Status](https://travis-ci.org/justiniso/AssertionChain.svg)](https://travis-ci.org/justiniso/AssertionChain)
+[![Build Status](https://travis-ci.org/justiniso/AssertionChain.svg)](https://travis-ci.org/justiniso/AssertionChain) [![Coverage Status](https://coveralls.io/repos/justiniso/AssertionChain/badge.svg?branch=master)](https://coveralls.io/r/justiniso/AssertionChain?branch=master)
 
 An AssertionChain is a wrapper for a group of commands that must happen in sequence.
+
+Installation:
+
+    pip install assertionchain
 
 Features:
 
