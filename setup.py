@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='assertionchain',
@@ -10,6 +10,7 @@ setup(
     author_email='justin+assertionchain@justiniso.com',
     url='https://github.com/justiniso/assertionchain',
     download_url='https://github.com/justiniso/assertionchain/tarball/0.1.0',
+    packages=find_packages(),
     install_requires=[],
     tests_require=[],
     test_suite='tests',

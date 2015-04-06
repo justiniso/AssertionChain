@@ -1,5 +1,5 @@
 import unittest
-from assertionchain import AssertionChain
+from assertionchain.assertionchain import AssertionChain
 
 
 # Some helper functions
