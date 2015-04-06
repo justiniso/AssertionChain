@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages, __version__
+from setuptools import setup, find_packages
+from assertionchain import __version__
 
 with open("./requirements.txt") as fp:
     requirements = fp.read()
