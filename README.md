@@ -33,8 +33,8 @@ expected value along with the step that produced the actual value. That's not pa
     )
     assert val == expected, message
 
-But having two repeat this every time you run a command can become very, very tedious. AssertionChain provides this
-API for performing incremental checks on each operations being executed in the chain, reducing the overhead of having
+But having to repeat this every time you run a command can become very, very tedious. AssertionChain provides this
+API for performing incremental checks on each operation being executed in the chain, reducing the overhead of having
 to type all of this out.
 
 It is a simple utility for grouping related actions and ensuring each step succeeds. For instance, assume we have a
@@ -47,7 +47,7 @@ AssertionChain to make sure each step was successful:
 
     # Write the file, retrieve the contents
     contents = AssertionChain()\
-        .do(lambda: get_contents(filename), 'Retrieve file contents').expect(None, operator='is not')\
+        .do(lambda: get_contents(filename), 'Retrieve file contents').expect(False, operator='is not')\
         .do(lambda: write_contents(filename, new_contents), 'Write file content').expect(True, operator='is')\
         .do(lambda: write_contents(filename, ''), 'Write empty file content').expect(True, operator='is')\
         .perform()
