@@ -1,6 +1,8 @@
 AssertionChain
 =============
 
+[![Build Status](https://travis-ci.org/justiniso/AssertionChain.svg)](https://travis-ci.org/justiniso/AssertionChain)
+
 An AssertionChain is a wrapper for a group of commands that must happen in sequence.
 
 Features:
